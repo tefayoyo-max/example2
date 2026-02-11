@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" data-page="dashboard">
+<html lang="en" data-page="upload">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EnvaSync – Dashboard</title>
+  <title>Upload – EnvaSync</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
 </head>
 <body>
 <header class="site-header">
@@ -85,17 +85,26 @@
 </header>
 
 <main class="container flow-lg">
-  <div class="page-title"><h1>Dashboard</h1></div>
-  <section class="grid grid-3 kpis">
-    <article class="card stat"><div class="card-body"><h2 class="stat-value">24.6t</h2><p class="stat-label">Total Waste (YTD)</p></div></article>
-    <article class="card stat"><div class="card-body"><h2 class="stat-value">62%</h2><p class="stat-label">Recyclables</p></div></article>
-    <article class="card stat"><div class="card-body"><h2 class="stat-value">38%</h2><p class="stat-label">Landfill Waste</p></div></article>
-  </section>
-  <section class="grid grid-2">
-    <article class="card"><header class="card-header"><h2>CO2 Emissions</h2></header><div class="card-body"><canvas id="trendChart"></canvas></div></article>
-    <article class="card"><header class="card-header"><h2>Month vs. Month</h2></header><div class="card-body"><canvas id="donutChart"></canvas></div></article>
-  </section>
-  <section class="card"><header class="card-header"><h2>Quick Alerts</h2></header><div class="card-body"><ul><li>Missing report for Branch‑2 (Jan)</li><li>CO2 spike detected (Plant‑1)</li></ul></div></section>
+  <h1>Upload Report</h1>
+  <p class="muted-text">Upload Excel or PDF → Auto‑read → Review & Confirm → Save</p>
+  <form class="card flow-md" id="uploadForm" aria-label="Upload documents">
+    <div class="grid grid-3">
+      <div class="form-field"><label for="category">Category</label>
+        <select id="category" name="category" required>
+          <option value="" disabled selected>Select category</option>
+          <option>Waste Management</option>
+          <option>Hazardous Materials</option>
+          <option>Air Emissions</option>
+          <option>Water Discharge</option>
+        </select>
+      </div>
+      <div class="form-field"><label for="period">Reporting Period</label><input id="period" name="period" type="month" required></div>
+      <div class="form-field"><label for="tags">Tags (optional)</label><input id="tags" name="tags" type="text" placeholder="plant‑1, Q1"></div>
+    </div>
+    <div class="dropzone" id="dropzone" tabindex="0"><p><strong>Drag & drop</strong> files here or <label for="fileInput" class="link">browse</label></p><input id="fileInput" type="file" multiple hidden></div>
+    <div class="actions"><button type="submit" class="btn">Upload</button><button type="reset" class="btn btn-ghost">Clear</button></div>
+  </form>
+  <section class="card"><header class="card-header"><h2>Recent Uploads</h2></header><div class="card-body table-scroll"><table class="table"><thead><tr><th>File</th><th>Category</th><th>Period</th><th>Status</th><th>Actions</th></tr></thead><tbody id="uploadsList"></tbody></table></div></section>
 </main>
   <footer class="site-footer">
     <p>&copy; <span id="year"></span> EnvaSync. All rights reserved.</p>

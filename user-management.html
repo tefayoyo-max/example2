@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" data-page="dashboard">
+<html lang="en" data-page="users">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EnvaSync – Dashboard</title>
+  <title>User Management – EnvaSync</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
 </head>
 <body>
 <header class="site-header">
@@ -85,17 +85,11 @@
 </header>
 
 <main class="container flow-lg">
-  <div class="page-title"><h1>Dashboard</h1></div>
-  <section class="grid grid-3 kpis">
-    <article class="card stat"><div class="card-body"><h2 class="stat-value">24.6t</h2><p class="stat-label">Total Waste (YTD)</p></div></article>
-    <article class="card stat"><div class="card-body"><h2 class="stat-value">62%</h2><p class="stat-label">Recyclables</p></div></article>
-    <article class="card stat"><div class="card-body"><h2 class="stat-value">38%</h2><p class="stat-label">Landfill Waste</p></div></article>
-  </section>
-  <section class="grid grid-2">
-    <article class="card"><header class="card-header"><h2>CO2 Emissions</h2></header><div class="card-body"><canvas id="trendChart"></canvas></div></article>
-    <article class="card"><header class="card-header"><h2>Month vs. Month</h2></header><div class="card-body"><canvas id="donutChart"></canvas></div></article>
-  </section>
-  <section class="card"><header class="card-header"><h2>Quick Alerts</h2></header><div class="card-body"><ul><li>Missing report for Branch‑2 (Jan)</li><li>CO2 spike detected (Plant‑1)</li></ul></div></section>
+  <h1>User Management</h1>
+  <section class="card"><header class="card-header"><h2>Users</h2></header><div class="card-body table-scroll">
+    <table class="table"><thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th><th></th></tr></thead>
+    <tbody><tr><td>Jane Doe</td><td>jane@co.com</td><td>Admin</td><td>Active</td><td><button class="btn btn-ghost btn-sm">Disable</button></td></tr></tbody></table>
+  </div></section>
 </main>
   <footer class="site-footer">
     <p>&copy; <span id="year"></span> EnvaSync. All rights reserved.</p>

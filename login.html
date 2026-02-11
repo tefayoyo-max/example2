@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" data-page="dashboard">
+<html lang="en" data-page="login">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EnvaSync – Dashboard</title>
+  <title>Sign in – EnvaSync</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
 </head>
 <body>
 <header class="site-header">
@@ -85,17 +85,14 @@
 </header>
 
 <main class="container flow-lg">
-  <div class="page-title"><h1>Dashboard</h1></div>
-  <section class="grid grid-3 kpis">
-    <article class="card stat"><div class="card-body"><h2 class="stat-value">24.6t</h2><p class="stat-label">Total Waste (YTD)</p></div></article>
-    <article class="card stat"><div class="card-body"><h2 class="stat-value">62%</h2><p class="stat-label">Recyclables</p></div></article>
-    <article class="card stat"><div class="card-body"><h2 class="stat-value">38%</h2><p class="stat-label">Landfill Waste</p></div></article>
+  <h1>Sign in</h1>
+  <section class="card auth-card flow-md" aria-label="Sign in form">
+    <div class="card-body grid grid-2">
+      <div class="form-field"><label for="lemail">Email</label><input id="lemail" type="email" required /></div>
+      <div class="form-field"><label for="lpassword">Password</label><input id="lpassword" type="password" required /></div>
+      <div class="actions"><button class="btn" type="submit">Sign in</button><a class="link" href="#">Forgot password?</a></div>
+    </div>
   </section>
-  <section class="grid grid-2">
-    <article class="card"><header class="card-header"><h2>CO2 Emissions</h2></header><div class="card-body"><canvas id="trendChart"></canvas></div></article>
-    <article class="card"><header class="card-header"><h2>Month vs. Month</h2></header><div class="card-body"><canvas id="donutChart"></canvas></div></article>
-  </section>
-  <section class="card"><header class="card-header"><h2>Quick Alerts</h2></header><div class="card-body"><ul><li>Missing report for Branch‑2 (Jan)</li><li>CO2 spike detected (Plant‑1)</li></ul></div></section>
 </main>
   <footer class="site-footer">
     <p>&copy; <span id="year"></span> EnvaSync. All rights reserved.</p>

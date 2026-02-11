@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" data-page="dashboard">
+<html lang="en" data-page="settings">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EnvaSync – Dashboard</title>
+  <title>Settings – EnvaSync</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
 </head>
 <body>
 <header class="site-header">
@@ -85,17 +85,34 @@
 </header>
 
 <main class="container flow-lg">
-  <div class="page-title"><h1>Dashboard</h1></div>
-  <section class="grid grid-3 kpis">
-    <article class="card stat"><div class="card-body"><h2 class="stat-value">24.6t</h2><p class="stat-label">Total Waste (YTD)</p></div></article>
-    <article class="card stat"><div class="card-body"><h2 class="stat-value">62%</h2><p class="stat-label">Recyclables</p></div></article>
-    <article class="card stat"><div class="card-body"><h2 class="stat-value">38%</h2><p class="stat-label">Landfill Waste</p></div></article>
-  </section>
+  <h1>Settings</h1>
   <section class="grid grid-2">
-    <article class="card"><header class="card-header"><h2>CO2 Emissions</h2></header><div class="card-body"><canvas id="trendChart"></canvas></div></article>
-    <article class="card"><header class="card-header"><h2>Month vs. Month</h2></header><div class="card-body"><canvas id="donutChart"></canvas></div></article>
+    <form class="card flow-md" aria-label="General settings">
+      <header class="card-header"><h2>General Settings</h2></header>
+      <div class="grid grid-2">
+        <div class="form-field"><label>Organization</label><input type="text" placeholder="Company Ltd."></div>
+        <div class="form-field"><label>Region</label><select><option>Global</option><option>EMEA</option><option>APAC</option></select></div>
+        <div class="form-field"><label>Default Role</label><select><option>Viewer</option><option>Editor</option><option>Admin</option></select></div>
+        <div class="form-field"><label>Time Zone</label><input type="text" placeholder="UTC+03:00"></div>
+      </div>
+      <div class="actions"><button class="btn" type="button">Save</button></div>
+    </form>
+
+    <form class="card flow-md" aria-label="Security settings">
+      <header class="card-header"><h2>Security & Authentication</h2></header>
+      <div class="grid grid-2">
+        <div class="form-field"><label>MFA</label><select><option>Enabled</option><option>Disabled</option></select></div>
+        <div class="form-field"><label>Session Timeout</label><input type="number" placeholder="30 (minutes)"></div>
+      </div>
+      <div class="actions"><button class="btn" type="button">Save</button></div>
+    </form>
   </section>
-  <section class="card"><header class="card-header"><h2>Quick Alerts</h2></header><div class="card-body"><ul><li>Missing report for Branch‑2 (Jan)</li><li>CO2 spike detected (Plant‑1)</li></ul></div></section>
+
+  <form class="card flow-md" aria-label="Integrations">
+    <header class="card-header"><h2>Integrations (API)</h2></header>
+    <div class="card-body"><p>Future API keys and webhooks management area.</p></div>
+    <div class="actions"><button class="btn" type="button">Save</button></div>
+  </form>
 </main>
   <footer class="site-footer">
     <p>&copy; <span id="year"></span> EnvaSync. All rights reserved.</p>

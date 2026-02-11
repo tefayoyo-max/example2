@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" data-page="dashboard">
+<html lang="en" data-page="support">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EnvaSync – Dashboard</title>
+  <title>Contact – EnvaSync</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
 </head>
 <body>
 <header class="site-header">
@@ -85,17 +85,20 @@
 </header>
 
 <main class="container flow-lg">
-  <div class="page-title"><h1>Dashboard</h1></div>
-  <section class="grid grid-3 kpis">
-    <article class="card stat"><div class="card-body"><h2 class="stat-value">24.6t</h2><p class="stat-label">Total Waste (YTD)</p></div></article>
-    <article class="card stat"><div class="card-body"><h2 class="stat-value">62%</h2><p class="stat-label">Recyclables</p></div></article>
-    <article class="card stat"><div class="card-body"><h2 class="stat-value">38%</h2><p class="stat-label">Landfill Waste</p></div></article>
-  </section>
+  <h1>Contact Support</h1>
   <section class="grid grid-2">
-    <article class="card"><header class="card-header"><h2>CO2 Emissions</h2></header><div class="card-body"><canvas id="trendChart"></canvas></div></article>
-    <article class="card"><header class="card-header"><h2>Month vs. Month</h2></header><div class="card-body"><canvas id="donutChart"></canvas></div></article>
+    <form class="card flow-md" id="contactForm" aria-label="Contact form">
+      <div class="grid grid-2">
+        <div class="form-field"><label for="cname">Full Name</label><input id="cname" type="text" required></div>
+        <div class="form-field"><label for="cemail">Email</label><input id="cemail" type="email" required></div>
+        <div class="form-field"><label for="corg">Organization</label><input id="corg" type="text"></div>
+        <div class="form-field"><label for="ctopic">Topic</label><select id="ctopic"><option>Support</option><option>Sales</option><option>Billing</option><option>Feedback</option></select></div>
+      </div>
+      <div class="form-field"><label for="cmsg">Message</label><textarea id="cmsg" rows="5" required></textarea></div>
+      <div class="actions"><button class="btn" type="submit">Send</button><button class="btn btn-ghost" type="reset">Clear</button></div>
+    </form>
+    <aside class="card"><div class="card-body"><h2>Support Info</h2><p><strong>Email:</strong> support@envasync.com</p><p><strong>Hours:</strong> Mon–Fri 9:00–18:00</p></div></aside>
   </section>
-  <section class="card"><header class="card-header"><h2>Quick Alerts</h2></header><div class="card-body"><ul><li>Missing report for Branch‑2 (Jan)</li><li>CO2 spike detected (Plant‑1)</li></ul></div></section>
 </main>
   <footer class="site-footer">
     <p>&copy; <span id="year"></span> EnvaSync. All rights reserved.</p>
