@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" data-page="dashboard">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EnvaSync – Dashboard</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Dashboard – EnvaSync</title>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 <header class="site-header">
-  <a href="index.html" class="brand" aria-label="EnvaSync Home"><img src="assets/img/logo.png" alt="EnvaSync logo" class="brand-logo"/> <span class="brand-text">EnvaSync</span></a>
-  
-<nav class="main-nav" aria-label="Main">
+  <a href="index.html" class="brand" aria-label="EnvaSync Home">
+    <img src="assets/img/logo.png" alt="EnvaSync" class="brand-logo"/>
+    <span class="brand-text">EnvaSync</span>
+  </a>
+  <nav class="main-nav" aria-label="Main">
   <ul role="menubar">
     <li><a href="dashboard.html" data-nav="dashboard" role="menuitem">Dashboard</a></li>
-
     <li class="has-dropdown">
       <a href="reports-center.html" data-nav="reports" aria-haspopup="true" aria-expanded="false" role="menuitem">Reports</a>
       <ul class="dropdown" aria-label="Reports submenu">
@@ -24,7 +25,6 @@
         <li><a href="municipality.html">Municipality Reports</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="upload.html" data-nav="upload" aria-haspopup="true" aria-expanded="false" role="menuitem">Upload</a>
       <ul class="dropdown" aria-label="Upload submenu">
@@ -32,17 +32,15 @@
         <li><a href="report-summary.html">Report Summary</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="compliance.html" data-nav="compliance" aria-haspopup="true" aria-expanded="false" role="menuitem">Compliance</a>
       <ul class="dropdown" aria-label="Compliance submenu">
         <li><a href="compliance.html">Compliance Center</a></li>
         <li><a href="compliance.html#missing">Missing Reports</a></li>
         <li><a href="compliance.html#expected">Expected Submissions</a></li>
-        <li><a href="compliance.html#verification">Automatic Verification</a></li>
+        <li><a href="compliance.html#verification">Auto Verification</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="user-management.html" data-nav="users" aria-haspopup="true" aria-expanded="false" role="menuitem">Users</a>
       <ul class="dropdown" aria-label="Users submenu">
@@ -51,55 +49,99 @@
         <li><a href="profile.html">Profile</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="admin-dashboard.html" data-nav="admin" aria-haspopup="true" aria-expanded="false" role="menuitem">Admin</a>
       <ul class="dropdown" aria-label="Admin submenu">
         <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
         <li><a href="establishments.html">Establishments</a></li>
-        <li><a href="audit-log.html">Audit & Activity Log</a></li>
-        <li><a href="notifications.html">Notifications & Logs</a></li>
+        <li><a href="audit-log.html">Audit Log</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="support.html" data-nav="support" aria-haspopup="true" aria-expanded="false" role="menuitem">Support</a>
       <ul class="dropdown" aria-label="Support submenu">
         <li><a href="support.html">Support & Help</a></li>
-        <li><a href="contact.html">Contact Support</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="settings.html" data-nav="settings" aria-haspopup="true" aria-expanded="false" role="menuitem">Settings</a>
       <ul class="dropdown" aria-label="Settings submenu">
         <li><a href="settings.html">General Settings</a></li>
-        <li><a href="security.html">Security & Authentication</a></li>
+        <li><a href="security.html">Security</a></li>
         <li><a href="integrations.html">Integrations</a></li>
       </ul>
     </li>
   </ul>
   <a href="login.html" class="btn-signin" data-nav="login" title="Sign in">Sign in</a>
 </nav>
-
 </header>
-
 <main class="container flow-lg">
-  <div class="page-title"><h1>Dashboard</h1></div>
-  <section class="grid grid-3 kpis">
-    <article class="card stat"><div class="card-body"><h2 class="stat-value">24.6t</h2><p class="stat-label">Total Waste (YTD)</p></div></article>
-    <article class="card stat"><div class="card-body"><h2 class="stat-value">62%</h2><p class="stat-label">Recyclables</p></div></article>
-    <article class="card stat"><div class="card-body"><h2 class="stat-value">38%</h2><p class="stat-label">Landfill Waste</p></div></article>
-  </section>
-  <section class="grid grid-2">
-    <article class="card"><header class="card-header"><h2>CO2 Emissions</h2></header><div class="card-body"><canvas id="trendChart"></canvas></div></article>
-    <article class="card"><header class="card-header"><h2>Month vs. Month</h2></header><div class="card-body"><canvas id="donutChart"></canvas></div></article>
-  </section>
-  <section class="card"><header class="card-header"><h2>Quick Alerts</h2></header><div class="card-body"><ul><li>Missing report for Branch‑2 (Jan)</li><li>CO2 spike detected (Plant‑1)</li></ul></div></section>
+
+<div class="page-title">
+  <h1>Dashboard</h1>
+  <div class="actions">
+    <a href="upload.html" class="btn">+ Upload Report</a>
+    <a href="reports-center.html" class="btn btn-outline">View Reports</a>
+  </div>
+</div>
+
+<section class="grid grid-4 kpis">
+  <article class="card stat"><div class="card-body">
+    <p class="stat-label">Total Waste (YTD)</p><h2 class="stat-value">24.6t</h2>
+  </div></article>
+  <article class="card stat"><div class="card-body">
+    <p class="stat-label">Recyclables</p><h2 class="stat-value">62%</h2>
+  </div></article>
+  <article class="card stat"><div class="card-body">
+    <p class="stat-label">Landfill Waste</p><h2 class="stat-value">38%</h2>
+  </div></article>
+  <article class="card stat"><div class="card-body">
+    <p class="stat-label">Compliance Score</p><h2 class="stat-value" style="color:var(--success)">92%</h2>
+  </div></article>
+</section>
+
+<section class="grid grid-2">
+  <article class="card">
+    <header class="card-header"><h2>CO₂ Emissions Trend</h2></header>
+    <div class="card-body"><canvas id="trendChart" height="200"></canvas></div>
+  </article>
+  <article class="card">
+    <header class="card-header"><h2>Compliance Overview</h2></header>
+    <div class="card-body"><canvas id="donutChart" height="200"></canvas></div>
+  </article>
+</section>
+
+<section class="card">
+  <header class="card-header"><h2>⚠ Quick Alerts</h2></header>
+  <div class="card-body">
+    <ul class="list">
+      <li><span class="badge badge-danger">Missing</span> &nbsp;Report for Branch‑2 (January) — due 5 days ago</li>
+      <li><span class="badge badge-warning">Spike</span> &nbsp;CO₂ spike detected at Plant‑1 (+18% vs last month)</li>
+      <li><span class="badge badge-info">Pending</span> &nbsp;Municipality report awaiting submission (Feb)</li>
+    </ul>
+  </div>
+</section>
+
+<section class="card">
+  <header class="card-header"><h2>Recent Uploads</h2></header>
+  <div class="card-body table-scroll">
+    <table class="table">
+      <thead><tr><th>File</th><th>Category</th><th>Period</th><th>Uploaded By</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>waste_2026_01.xlsx</td><td>General Waste</td><td>Jan 2026</td><td>admin</td><td><span class="badge badge-success">Verified</span></td></tr>
+        <tr><td>co2_dec_2025.pdf</td><td>CO₂ Emissions</td><td>Dec 2025</td><td>jane.doe</td><td><span class="badge badge-success">Verified</span></td></tr>
+        <tr><td>hazardous_jan.xlsx</td><td>Hazardous</td><td>Jan 2026</td><td>m.ali</td><td><span class="badge badge-warning">Pending Review</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
 </main>
-  <footer class="site-footer">
-    <p>&copy; <span id="year"></span> EnvaSync. All rights reserved.</p>
-  </footer>
-  <script src="assets/js/app.js"></script>
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> EnvaSync. All rights reserved.</p>
+</footer>
+<script src="assets/js/app.js"></script>
 </body>
 </html>

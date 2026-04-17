@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" data-page="compliance">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Compliance – EnvaSync</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Compliance Center – EnvaSync</title>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
   
 </head>
 <body>
 <header class="site-header">
-  <a href="index.html" class="brand" aria-label="EnvaSync Home"><img src="assets/img/logo.png" alt="EnvaSync logo" class="brand-logo"/> <span class="brand-text">EnvaSync</span></a>
-  
-<nav class="main-nav" aria-label="Main">
+  <a href="index.html" class="brand" aria-label="EnvaSync Home">
+    <img src="assets/img/logo.png" alt="EnvaSync" class="brand-logo"/>
+    <span class="brand-text">EnvaSync</span>
+  </a>
+  <nav class="main-nav" aria-label="Main">
   <ul role="menubar">
     <li><a href="dashboard.html" data-nav="dashboard" role="menuitem">Dashboard</a></li>
-
     <li class="has-dropdown">
       <a href="reports-center.html" data-nav="reports" aria-haspopup="true" aria-expanded="false" role="menuitem">Reports</a>
       <ul class="dropdown" aria-label="Reports submenu">
@@ -24,7 +25,6 @@
         <li><a href="municipality.html">Municipality Reports</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="upload.html" data-nav="upload" aria-haspopup="true" aria-expanded="false" role="menuitem">Upload</a>
       <ul class="dropdown" aria-label="Upload submenu">
@@ -32,17 +32,15 @@
         <li><a href="report-summary.html">Report Summary</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="compliance.html" data-nav="compliance" aria-haspopup="true" aria-expanded="false" role="menuitem">Compliance</a>
       <ul class="dropdown" aria-label="Compliance submenu">
         <li><a href="compliance.html">Compliance Center</a></li>
         <li><a href="compliance.html#missing">Missing Reports</a></li>
         <li><a href="compliance.html#expected">Expected Submissions</a></li>
-        <li><a href="compliance.html#verification">Automatic Verification</a></li>
+        <li><a href="compliance.html#verification">Auto Verification</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="user-management.html" data-nav="users" aria-haspopup="true" aria-expanded="false" role="menuitem">Users</a>
       <ul class="dropdown" aria-label="Users submenu">
@@ -51,53 +49,93 @@
         <li><a href="profile.html">Profile</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="admin-dashboard.html" data-nav="admin" aria-haspopup="true" aria-expanded="false" role="menuitem">Admin</a>
       <ul class="dropdown" aria-label="Admin submenu">
         <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
         <li><a href="establishments.html">Establishments</a></li>
-        <li><a href="audit-log.html">Audit & Activity Log</a></li>
-        <li><a href="notifications.html">Notifications & Logs</a></li>
+        <li><a href="audit-log.html">Audit Log</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="support.html" data-nav="support" aria-haspopup="true" aria-expanded="false" role="menuitem">Support</a>
       <ul class="dropdown" aria-label="Support submenu">
         <li><a href="support.html">Support & Help</a></li>
-        <li><a href="contact.html">Contact Support</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="settings.html" data-nav="settings" aria-haspopup="true" aria-expanded="false" role="menuitem">Settings</a>
       <ul class="dropdown" aria-label="Settings submenu">
         <li><a href="settings.html">General Settings</a></li>
-        <li><a href="security.html">Security & Authentication</a></li>
+        <li><a href="security.html">Security</a></li>
         <li><a href="integrations.html">Integrations</a></li>
       </ul>
     </li>
   </ul>
   <a href="login.html" class="btn-signin" data-nav="login" title="Sign in">Sign in</a>
 </nav>
-
 </header>
-
 <main class="container flow-lg">
-  <div class="page-title"><h1>Compliance Center</h1></div>
-  <section class="grid grid-3 kpis">
-    <article class="card stat"><div class="card-body"><h2 class="stat-value">92%</h2><p class="stat-label">Compliance Score</p></div></article>
-    <article class="card stat"><div class="card-body"><h2 class="stat-value">3</h2><p class="stat-label">Missing Reports</p></div></article>
-    <article class="card stat"><div class="card-body"><h2 class="stat-value">14</h2><p class="stat-label">Expected Submissions</p></div></article>
-  </section>
-  <section id="missing" class="card"><header class="card-header"><h2>Missing Reports</h2></header><div class="card-body">—</div></section>
-  <section id="expected" class="card"><header class="card-header"><h2>Expected Submissions</h2></header><div class="card-body">—</div></section>
-  <section id="verification" class="card"><header class="card-header"><h2>Automatic Verification</h2></header><div class="card-body">—</div></section>
+
+<div class="page-title"><h1>Compliance Center</h1></div>
+
+<section class="grid grid-3 kpis">
+  <article class="card stat"><div class="card-body">
+    <p class="stat-label">Compliance Score</p><h2 class="stat-value" style="color:var(--success)">92%</h2></div></article>
+  <article class="card stat"><div class="card-body">
+    <p class="stat-label">Missing Reports</p><h2 class="stat-value" style="color:var(--danger)">3</h2></div></article>
+  <article class="card stat"><div class="card-body">
+    <p class="stat-label">Pending Review</p><h2 class="stat-value" style="color:var(--warning)">5</h2></div></article>
+</section>
+
+<section class="card" id="missing">
+  <header class="card-header"><h2>Missing Reports</h2></header>
+  <div class="card-body table-scroll">
+    <table class="table">
+      <thead><tr><th>Establishment</th><th>Category</th><th>Period</th><th>Due Date</th><th>Days Overdue</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td>Branch 2</td><td>General Waste</td><td>Jan 2026</td><td>2026-02-05</td><td><span class="badge badge-danger">+12 days</span></td><td><a href="upload.html" class="btn btn-sm">Upload Now</a></td></tr>
+        <tr><td>Plant 1</td><td>Hazardous</td><td>Dec 2025</td><td>2026-01-10</td><td><span class="badge badge-danger">+38 days</span></td><td><a href="upload.html" class="btn btn-sm">Upload Now</a></td></tr>
+        <tr><td>Branch 2</td><td>CO₂ Emissions</td><td>Jan 2026</td><td>2026-02-10</td><td><span class="badge badge-warning">+7 days</span></td><td><a href="upload.html" class="btn btn-sm">Upload Now</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card" id="expected">
+  <header class="card-header"><h2>Expected Submissions (Feb 2026)</h2></header>
+  <div class="card-body table-scroll">
+    <table class="table">
+      <thead><tr><th>Establishment</th><th>Category</th><th>Due Date</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Head Office</td><td>General Waste</td><td>2026-03-05</td><td><span class="badge badge-info">Upcoming</span></td></tr>
+        <tr><td>Branch 1</td><td>Recyclables</td><td>2026-03-05</td><td><span class="badge badge-info">Upcoming</span></td></tr>
+        <tr><td>Plant 1</td><td>CO₂ Emissions</td><td>2026-03-08</td><td><span class="badge badge-success">Submitted</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card" id="verification">
+  <header class="card-header"><h2>Automatic Verification Rules</h2></header>
+  <div class="card-body">
+    <ul class="list">
+      <li>✅ File format check (xlsx / pdf only)</li>
+      <li>✅ Required columns validation</li>
+      <li>✅ Negative quantity detection</li>
+      <li>✅ Period consistency check</li>
+      <li>✅ Duplicate submission prevention</li>
+      <li>⚙️ AI anomaly scoring (threshold: 2σ)</li>
+    </ul>
+  </div>
+</section>
+
 </main>
-  <footer class="site-footer">
-    <p>&copy; <span id="year"></span> EnvaSync. All rights reserved.</p>
-  </footer>
-  <script src="assets/js/app.js"></script>
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> EnvaSync. All rights reserved.</p>
+</footer>
+<script src="assets/js/app.js"></script>
 </body>
 </html>

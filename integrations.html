@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" data-page="settings">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Integrations – EnvaSync</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css"/>
   
 </head>
 <body>
 <header class="site-header">
-  <a href="index.html" class="brand" aria-label="EnvaSync Home"><img src="assets/img/logo.png" alt="EnvaSync logo" class="brand-logo"/> <span class="brand-text">EnvaSync</span></a>
-  
-<nav class="main-nav" aria-label="Main">
+  <a href="index.html" class="brand" aria-label="EnvaSync Home">
+    <img src="assets/img/logo.png" alt="EnvaSync" class="brand-logo"/>
+    <span class="brand-text">EnvaSync</span>
+  </a>
+  <nav class="main-nav" aria-label="Main">
   <ul role="menubar">
     <li><a href="dashboard.html" data-nav="dashboard" role="menuitem">Dashboard</a></li>
-
     <li class="has-dropdown">
       <a href="reports-center.html" data-nav="reports" aria-haspopup="true" aria-expanded="false" role="menuitem">Reports</a>
       <ul class="dropdown" aria-label="Reports submenu">
@@ -24,7 +25,6 @@
         <li><a href="municipality.html">Municipality Reports</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="upload.html" data-nav="upload" aria-haspopup="true" aria-expanded="false" role="menuitem">Upload</a>
       <ul class="dropdown" aria-label="Upload submenu">
@@ -32,17 +32,15 @@
         <li><a href="report-summary.html">Report Summary</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="compliance.html" data-nav="compliance" aria-haspopup="true" aria-expanded="false" role="menuitem">Compliance</a>
       <ul class="dropdown" aria-label="Compliance submenu">
         <li><a href="compliance.html">Compliance Center</a></li>
         <li><a href="compliance.html#missing">Missing Reports</a></li>
         <li><a href="compliance.html#expected">Expected Submissions</a></li>
-        <li><a href="compliance.html#verification">Automatic Verification</a></li>
+        <li><a href="compliance.html#verification">Auto Verification</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="user-management.html" data-nav="users" aria-haspopup="true" aria-expanded="false" role="menuitem">Users</a>
       <ul class="dropdown" aria-label="Users submenu">
@@ -51,41 +49,67 @@
         <li><a href="profile.html">Profile</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="admin-dashboard.html" data-nav="admin" aria-haspopup="true" aria-expanded="false" role="menuitem">Admin</a>
       <ul class="dropdown" aria-label="Admin submenu">
         <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
         <li><a href="establishments.html">Establishments</a></li>
-        <li><a href="audit-log.html">Audit & Activity Log</a></li>
-        <li><a href="notifications.html">Notifications & Logs</a></li>
+        <li><a href="audit-log.html">Audit Log</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="support.html" data-nav="support" aria-haspopup="true" aria-expanded="false" role="menuitem">Support</a>
       <ul class="dropdown" aria-label="Support submenu">
         <li><a href="support.html">Support & Help</a></li>
-        <li><a href="contact.html">Contact Support</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="settings.html" data-nav="settings" aria-haspopup="true" aria-expanded="false" role="menuitem">Settings</a>
       <ul class="dropdown" aria-label="Settings submenu">
         <li><a href="settings.html">General Settings</a></li>
-        <li><a href="security.html">Security & Authentication</a></li>
+        <li><a href="security.html">Security</a></li>
         <li><a href="integrations.html">Integrations</a></li>
       </ul>
     </li>
   </ul>
   <a href="login.html" class="btn-signin" data-nav="login" title="Sign in">Sign in</a>
 </nav>
-
 </header>
-<main class="container flow-lg"><h1>Integrations (API)</h1><section class="card"><div class="card-body"><p>Future API endpoints and keys management.</p></div></section></main>  <footer class="site-footer">
-    <p>&copy; <span id="year"></span> EnvaSync. All rights reserved.</p>
-  </footer>
-  <script src="assets/js/app.js"></script>
+<main class="container flow-lg">
+
+<div class="page-title"><h1>Integrations &amp; API</h1></div>
+
+<section class="card">
+  <header class="card-header"><h2>API Keys</h2><button class="btn">Generate Key</button></header>
+  <div class="card-body table-scroll">
+    <table class="table">
+      <thead><tr><th>Name</th><th>Key</th><th>Created</th><th>Last Used</th><th>Status</th><th></th></tr></thead>
+      <tbody>
+        <tr><td>Production Key</td><td><code>ev_prod_••••••••••3f8a</code></td><td>2026-01-01</td><td>Today</td><td><span class="badge badge-success">Active</span></td><td><button class="btn btn-danger btn-sm">Revoke</button></td></tr>
+        <tr><td>Dev Key</td><td><code>ev_dev_••••••••••9c2d</code></td><td>2025-11-15</td><td>2026-01-20</td><td><span class="badge badge-neutral">Inactive</span></td><td><button class="btn btn-danger btn-sm">Revoke</button></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card">
+  <header class="card-header"><h2>Connected Services</h2></header>
+  <div class="card-body">
+    <ul class="list">
+      <li>🟢 <strong>ERP System</strong> — Connected (last sync: 2 hours ago)</li>
+      <li>🔴 <strong>Municipality Portal</strong> — Disconnected <button class="btn btn-sm btn-outline" style="margin-left:auto">Connect</button></li>
+      <li>🟢 <strong>Email Service (SendGrid)</strong> — Connected</li>
+      <li>🔴 <strong>Bee'ah API</strong> — Not configured <button class="btn btn-sm btn-outline" style="margin-left:auto">Setup</button></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> EnvaSync. All rights reserved.</p>
+</footer>
+<script src="assets/js/app.js"></script>
 </body>
 </html>

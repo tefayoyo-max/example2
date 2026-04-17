@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" data-page="admin">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Audit & Activity Log – EnvaSync</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Audit Log – EnvaSync</title>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
   
 </head>
 <body>
 <header class="site-header">
-  <a href="index.html" class="brand" aria-label="EnvaSync Home"><img src="assets/img/logo.png" alt="EnvaSync logo" class="brand-logo"/> <span class="brand-text">EnvaSync</span></a>
-  
-<nav class="main-nav" aria-label="Main">
+  <a href="index.html" class="brand" aria-label="EnvaSync Home">
+    <img src="assets/img/logo.png" alt="EnvaSync" class="brand-logo"/>
+    <span class="brand-text">EnvaSync</span>
+  </a>
+  <nav class="main-nav" aria-label="Main">
   <ul role="menubar">
     <li><a href="dashboard.html" data-nav="dashboard" role="menuitem">Dashboard</a></li>
-
     <li class="has-dropdown">
       <a href="reports-center.html" data-nav="reports" aria-haspopup="true" aria-expanded="false" role="menuitem">Reports</a>
       <ul class="dropdown" aria-label="Reports submenu">
@@ -24,7 +25,6 @@
         <li><a href="municipality.html">Municipality Reports</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="upload.html" data-nav="upload" aria-haspopup="true" aria-expanded="false" role="menuitem">Upload</a>
       <ul class="dropdown" aria-label="Upload submenu">
@@ -32,17 +32,15 @@
         <li><a href="report-summary.html">Report Summary</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="compliance.html" data-nav="compliance" aria-haspopup="true" aria-expanded="false" role="menuitem">Compliance</a>
       <ul class="dropdown" aria-label="Compliance submenu">
         <li><a href="compliance.html">Compliance Center</a></li>
         <li><a href="compliance.html#missing">Missing Reports</a></li>
         <li><a href="compliance.html#expected">Expected Submissions</a></li>
-        <li><a href="compliance.html#verification">Automatic Verification</a></li>
+        <li><a href="compliance.html#verification">Auto Verification</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="user-management.html" data-nav="users" aria-haspopup="true" aria-expanded="false" role="menuitem">Users</a>
       <ul class="dropdown" aria-label="Users submenu">
@@ -51,49 +49,69 @@
         <li><a href="profile.html">Profile</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="admin-dashboard.html" data-nav="admin" aria-haspopup="true" aria-expanded="false" role="menuitem">Admin</a>
       <ul class="dropdown" aria-label="Admin submenu">
         <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
         <li><a href="establishments.html">Establishments</a></li>
-        <li><a href="audit-log.html">Audit & Activity Log</a></li>
-        <li><a href="notifications.html">Notifications & Logs</a></li>
+        <li><a href="audit-log.html">Audit Log</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="support.html" data-nav="support" aria-haspopup="true" aria-expanded="false" role="menuitem">Support</a>
       <ul class="dropdown" aria-label="Support submenu">
         <li><a href="support.html">Support & Help</a></li>
-        <li><a href="contact.html">Contact Support</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="settings.html" data-nav="settings" aria-haspopup="true" aria-expanded="false" role="menuitem">Settings</a>
       <ul class="dropdown" aria-label="Settings submenu">
         <li><a href="settings.html">General Settings</a></li>
-        <li><a href="security.html">Security & Authentication</a></li>
+        <li><a href="security.html">Security</a></li>
         <li><a href="integrations.html">Integrations</a></li>
       </ul>
     </li>
   </ul>
   <a href="login.html" class="btn-signin" data-nav="login" title="Sign in">Sign in</a>
 </nav>
-
 </header>
-
 <main class="container flow-lg">
-  <h1>Audit & Activity Log</h1>
-  <section class="card"><div class="card-body table-scroll">
-    <table class="table"><thead><tr><th>Time</th><th>User</th><th>Action</th><th>Object</th></tr></thead>
-    <tbody><tr><td>2026‑01‑31 10:22</td><td>admin</td><td>Uploaded Report</td><td>waste_2026_01.xlsx</td></tr></tbody></table>
-  </div></section>
+
+<div class="page-title"><h1>Audit &amp; Activity Log</h1></div>
+
+<form class="card" onsubmit="return false">
+  <div class="card-body">
+    <div class="grid grid-3" style="gap:.75rem;align-items:flex-end">
+      <div class="form-field"><label>From</label><input type="date" value="2026-01-01"/></div>
+      <div class="form-field"><label>To</label><input type="date" value="2026-01-31"/></div>
+      <div class="form-field"><label>User</label>
+        <select><option value="">All Users</option><option>admin</option><option>jane.doe</option><option>m.ali</option></select></div>
+    </div>
+    <div class="actions"><button class="btn">Filter</button><button class="btn btn-ghost">Export CSV</button></div>
+  </div>
+</form>
+
+<section class="card">
+  <div class="card-body table-scroll">
+    <table class="table">
+      <thead><tr><th>Time</th><th>User</th><th>Action</th><th>Object</th><th>IP</th></tr></thead>
+      <tbody>
+        <tr><td>2026-01-31 10:22</td><td>admin</td><td>Uploaded Report</td><td>waste_2026_01.xlsx</td><td>192.168.1.1</td></tr>
+        <tr><td>2026-01-30 09:15</td><td>jane.doe</td><td>Verified Report</td><td>co2_dec_2025.pdf</td><td>192.168.1.5</td></tr>
+        <tr><td>2026-01-29 14:03</td><td>m.ali</td><td>Uploaded Report</td><td>recyc_branch1.xlsx</td><td>10.0.0.12</td></tr>
+        <tr><td>2026-01-28 11:50</td><td>admin</td><td>Created User</td><td>s.ahmed@company.com</td><td>192.168.1.1</td></tr>
+        <tr><td>2026-01-27 08:32</td><td>system</td><td>Scheduled Job</td><td>monthly_reminder</td><td>localhost</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
 </main>
-  <footer class="site-footer">
-    <p>&copy; <span id="year"></span> EnvaSync. All rights reserved.</p>
-  </footer>
-  <script src="assets/js/app.js"></script>
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> EnvaSync. All rights reserved.</p>
+</footer>
+<script src="assets/js/app.js"></script>
 </body>
 </html>

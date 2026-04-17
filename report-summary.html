@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" data-page="upload">
+<html lang="en" data-page="reports">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Report Summary – EnvaSync</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css"/>
   
 </head>
 <body>
 <header class="site-header">
-  <a href="index.html" class="brand" aria-label="EnvaSync Home"><img src="assets/img/logo.png" alt="EnvaSync logo" class="brand-logo"/> <span class="brand-text">EnvaSync</span></a>
-  
-<nav class="main-nav" aria-label="Main">
+  <a href="index.html" class="brand" aria-label="EnvaSync Home">
+    <img src="assets/img/logo.png" alt="EnvaSync" class="brand-logo"/>
+    <span class="brand-text">EnvaSync</span>
+  </a>
+  <nav class="main-nav" aria-label="Main">
   <ul role="menubar">
     <li><a href="dashboard.html" data-nav="dashboard" role="menuitem">Dashboard</a></li>
-
     <li class="has-dropdown">
       <a href="reports-center.html" data-nav="reports" aria-haspopup="true" aria-expanded="false" role="menuitem">Reports</a>
       <ul class="dropdown" aria-label="Reports submenu">
@@ -24,7 +25,6 @@
         <li><a href="municipality.html">Municipality Reports</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="upload.html" data-nav="upload" aria-haspopup="true" aria-expanded="false" role="menuitem">Upload</a>
       <ul class="dropdown" aria-label="Upload submenu">
@@ -32,17 +32,15 @@
         <li><a href="report-summary.html">Report Summary</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="compliance.html" data-nav="compliance" aria-haspopup="true" aria-expanded="false" role="menuitem">Compliance</a>
       <ul class="dropdown" aria-label="Compliance submenu">
         <li><a href="compliance.html">Compliance Center</a></li>
         <li><a href="compliance.html#missing">Missing Reports</a></li>
         <li><a href="compliance.html#expected">Expected Submissions</a></li>
-        <li><a href="compliance.html#verification">Automatic Verification</a></li>
+        <li><a href="compliance.html#verification">Auto Verification</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="user-management.html" data-nav="users" aria-haspopup="true" aria-expanded="false" role="menuitem">Users</a>
       <ul class="dropdown" aria-label="Users submenu">
@@ -51,55 +49,96 @@
         <li><a href="profile.html">Profile</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="admin-dashboard.html" data-nav="admin" aria-haspopup="true" aria-expanded="false" role="menuitem">Admin</a>
       <ul class="dropdown" aria-label="Admin submenu">
         <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
         <li><a href="establishments.html">Establishments</a></li>
-        <li><a href="audit-log.html">Audit & Activity Log</a></li>
-        <li><a href="notifications.html">Notifications & Logs</a></li>
+        <li><a href="audit-log.html">Audit Log</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="support.html" data-nav="support" aria-haspopup="true" aria-expanded="false" role="menuitem">Support</a>
       <ul class="dropdown" aria-label="Support submenu">
         <li><a href="support.html">Support & Help</a></li>
-        <li><a href="contact.html">Contact Support</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </li>
-
     <li class="has-dropdown">
       <a href="settings.html" data-nav="settings" aria-haspopup="true" aria-expanded="false" role="menuitem">Settings</a>
       <ul class="dropdown" aria-label="Settings submenu">
         <li><a href="settings.html">General Settings</a></li>
-        <li><a href="security.html">Security & Authentication</a></li>
+        <li><a href="security.html">Security</a></li>
         <li><a href="integrations.html">Integrations</a></li>
       </ul>
     </li>
   </ul>
   <a href="login.html" class="btn-signin" data-nav="login" title="Sign in">Sign in</a>
 </nav>
-
 </header>
-
 <main class="container flow-lg">
+
+<div class="page-title">
   <h1>Report Summary</h1>
-  <section class="card"><div class="card-body">
-    <ul class="list">
-      <li>Quantities</li>
-      <li>Categories</li>
-      <li>CO2</li>
-      <li>Change vs last month</li>
-      <li>Recycling Rate</li>
-      <li>Status: <button class="btn btn-sm">Confirm</button> <button class="btn btn-ghost btn-sm">Flag Issue</button></li>
-    </ul>
-  </div></section>
+  <div class="actions">
+    <button class="btn btn-outline">Download PDF</button>
+    <button class="btn">Confirm &amp; Save</button>
+  </div>
+</div>
+
+<div class="grid grid-2">
+  <section class="card">
+    <header class="card-header"><h2>File Details</h2></header>
+    <div class="card-body">
+      <table class="table">
+        <tbody>
+          <tr><td style="font-weight:600;width:40%">File</td><td>waste_2026_01.xlsx</td></tr>
+          <tr><td style="font-weight:600">Category</td><td>General Waste</td></tr>
+          <tr><td style="font-weight:600">Period</td><td>January 2026</td></tr>
+          <tr><td style="font-weight:600">Establishment</td><td>Head Office</td></tr>
+          <tr><td style="font-weight:600">Uploaded By</td><td>admin</td></tr>
+          <tr><td style="font-weight:600">Status</td><td><span class="badge badge-warning">Pending Review</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card">
+    <header class="card-header"><h2>Extracted Metrics</h2></header>
+    <div class="card-body">
+      <table class="table">
+        <tbody>
+          <tr><td style="font-weight:600;width:50%">Total Quantity</td><td>3.2 tonnes</td></tr>
+          <tr><td style="font-weight:600">Recycling Rate</td><td>68%</td></tr>
+          <tr><td style="font-weight:600">CO₂ Equivalent</td><td>1.4 t CO₂e</td></tr>
+          <tr><td style="font-weight:600">Change vs Last Month</td><td style="color:var(--success)">▲ +4.2%</td></tr>
+          <tr><td style="font-weight:600">Landfill %</td><td>32%</td></tr>
+          <tr><td style="font-weight:600">Hazardous Items</td><td>0</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<section class="card">
+  <header class="card-header"><h2>AI Extraction Notes</h2></header>
+  <div class="card-body">
+    <div class="alert alert-success">✓ All rows extracted successfully. No anomalies detected.</div>
+    <div class="alert alert-info">ℹ 2 empty rows ignored on sheet "Raw Data".</div>
+  </div>
+</section>
+
+<div class="actions">
+  <button class="btn">✓ Confirm &amp; Submit</button>
+  <button class="btn btn-danger">✗ Reject Report</button>
+  <a href="reports-center.html" class="btn btn-ghost">← Back to Reports</a>
+</div>
+
 </main>
-  <footer class="site-footer">
-    <p>&copy; <span id="year"></span> EnvaSync. All rights reserved.</p>
-  </footer>
-  <script src="assets/js/app.js"></script>
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> EnvaSync. All rights reserved.</p>
+</footer>
+<script src="assets/js/app.js"></script>
 </body>
 </html>
